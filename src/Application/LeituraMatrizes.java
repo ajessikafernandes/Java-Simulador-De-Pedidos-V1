@@ -9,24 +9,32 @@ public class LeituraMatrizes {
 		Scanner ler = new Scanner(System.in);
 		
 		System.out.print("Informe a quantidade de linhas: ");
-		String a = "a" ;
+		int linha = ler.nextInt();
 		
 		System.out.print("Informe a quantidade de colunas: ");
-		String b = "haha";
-		String[][] matriz= new String[a][b];
+		int coluna = ler.nextInt();
+		int [][] matriz= new int [linha][coluna];
+		ler.nextLine();
+		
+		for (linha = 0; linha < matriz.length; linha ++) {		
+			for (coluna = 0; coluna < matriz[linha].length; coluna ++) {
+					
+				matriz [linha][coluna] = ler.nextInt();
+				
+			}
+		}
 		
 		ler.nextLine();
 		
-		int x = 0;
+		System.out.println("Informe o número: ");
+		int numero = ler.nextInt();
+		ler.nextLine();
 		
-		for (int cont = 0; cont < matriz.length; cont ++) {
-						
-			for (int cont2 = 0; cont2 < matriz.length; cont2 ++) {
-				System.out.println("Informe os valores: ");
-			
-				matriz [a][b] = matriz[2][2];
-				
-				System.out.println(a);
+		for (linha = 0; linha < matriz.length; linha++) {		
+			for (coluna = 0; coluna < matriz[linha].length; coluna++) {
+				if (numero == matriz[linha][coluna]) {
+				System.out.println("Posição é igual a " + linha + "," + coluna + " .");
+				}
 			}
 		}
 		
