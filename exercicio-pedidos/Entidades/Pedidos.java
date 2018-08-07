@@ -1,25 +1,34 @@
 package Entidades;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Pedidos {
-	
+
 	private Integer quantidade;
 	private double preco;
-	
+
 	private Produto nome;
 	private Produto precoProduto;
-	
-	private List <Produto> produto = new ArrayList <>(); 
 
-	public Pedidos() {
-		
+	public Pedidos(Produto nome, double preco, Integer quantidade, Produto precoProduto) {
+		this.nome = nome;
+		this.preco = preco;
+		this.quantidade = quantidade;
+		this.precoProduto = precoProduto;
 	}
 
-	public Pedidos(Integer quantidade, double preco) {
-		this.quantidade = quantidade;
-		this.preco = preco;
+	public Produto getNome() {
+		return nome;
+	}
+
+	public void setNome(Produto nome) {
+		this.nome = nome;
+	}
+
+	public Produto getPrecoProduto() {
+		return precoProduto;
+	}
+
+	public void setPrecoProduto(Produto precoProduto) {
+		this.precoProduto = precoProduto;
 	}
 
 	public Integer getQuantidade() {
@@ -37,9 +46,14 @@ public class Pedidos {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
+
+	public void toString(Produto nome, double preco, Integer quantidade, Produto precoProduto) {
+		System.out.println(nome + ", $" + preco + ", Quantidade: " + quantidade + " , Subtotal: $" + precoProduto);
+		
+	}
 	
-	public String toString (Integer quantidade, double preco, Produto nome, Produto precoProduto ) {
-		System.out.println(nome + ", $" + preco + ", Quantidade: " + quantidade + " " );
+	public double somaTotal (double preco, Integer quantidade, Produto precoProduto) {
+		
 	}
 
 }

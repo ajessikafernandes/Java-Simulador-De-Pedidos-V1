@@ -40,4 +40,8 @@ public class Cliente {
 		this.dataNascimento = dataNascimento;
 	}	
 	
+	public void toString (String nome, String email, String dataNascimento) {
+		System.out.printf("Cliente: " + nome + " (" + dataNascimento + ") - "  + email);
+	}
+	
 }
