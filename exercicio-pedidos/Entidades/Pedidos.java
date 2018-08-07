@@ -8,7 +8,11 @@ public class Pedidos {
 	private Integer quantidade;
 	private double preco;
 	
-	List <Produto> produto = new ArrayList <>(); 
+//	private List <Produto> produto = new ArrayList <>(); 
+
+//	for (int cont = 0; cont < quantidade; cont ++) {
+//		
+//	}
 	
 	public Pedidos() {
 		
@@ -16,10 +20,9 @@ public class Pedidos {
 
 	public Pedidos(Integer quantidade, double preco) {
 		this.quantidade = quantidade;
-		this.preco = preco; 
-		
+		this.preco = preco;
 	}
-	
+
 	public Integer getQuantidade() {
 		return quantidade;
 	}
@@ -36,12 +39,4 @@ public class Pedidos {
 		this.preco = preco;
 	}
 
-	public List<Produto> getProduto() {
-		return getProduto();
-	}
-
-	public void setProduto(List<Produto> produto) {
-		this.produto = produto;
-	}
-	
 }
