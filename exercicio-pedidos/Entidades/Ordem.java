@@ -4,11 +4,13 @@ import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import Enums.StatusPedido;
+
 public class Ordem {
 
 	private Date momento;
 	private StatusPedido status;
-
+	
 	public void addItem(Pedidos item) {
 		
 	}

@@ -1,4 +1,4 @@
-package Entidades;
+package Enums;
 
 public enum StatusPedido {
 

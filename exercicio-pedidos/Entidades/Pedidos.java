@@ -8,12 +8,11 @@ public class Pedidos {
 	private Integer quantidade;
 	private double preco;
 	
-//	private List <Produto> produto = new ArrayList <>(); 
-
-//	for (int cont = 0; cont < quantidade; cont ++) {
-//		
-//	}
+	private Produto nome;
+	private Produto precoProduto;
 	
+	private List <Produto> produto = new ArrayList <>(); 
+
 	public Pedidos() {
 		
 	}
@@ -37,6 +36,10 @@ public class Pedidos {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+	
+	public String toString (Integer quantidade, double preco, Produto nome, Produto precoProduto ) {
+		System.out.println(nome + ", $" + preco + ", Quantidade: " + quantidade + " " );
 	}
 
 }
