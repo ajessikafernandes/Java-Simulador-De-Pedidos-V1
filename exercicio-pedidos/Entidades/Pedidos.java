@@ -1,34 +1,27 @@
 package Entidades;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pedidos {
 
 	private Integer quantidade;
 	private double preco;
 
-	private Produto nome;
-	private Produto precoProduto;
+	private List<Produto> produto = new ArrayList<>();
 
-	public Pedidos(Produto nome, double preco, Integer quantidade, Produto precoProduto) {
-		this.nome = nome;
+	public Pedidos() {
+
+	}
+
+	public Pedidos(double preco, Integer quantidade) {
 		this.preco = preco;
 		this.quantidade = quantidade;
-		this.precoProduto = precoProduto;
 	}
 
-	public Produto getNome() {
-		return nome;
-	}
+	public void toString(Produto nome, double preco, Integer quantidade, Produto precoProduto) {
+		System.out.println(nome + ", $" + preco + ", Quantidade: " + quantidade + " , Subtotal: $" + precoProduto);
 
-	public void setNome(Produto nome) {
-		this.nome = nome;
-	}
-
-	public Produto getPrecoProduto() {
-		return precoProduto;
-	}
-
-	public void setPrecoProduto(Produto precoProduto) {
-		this.precoProduto = precoProduto;
 	}
 
 	public Integer getQuantidade() {
@@ -47,13 +40,24 @@ public class Pedidos {
 		this.preco = preco;
 	}
 
-	public void toString(Produto nome, double preco, Integer quantidade, Produto precoProduto) {
-		System.out.println(nome + ", $" + preco + ", Quantidade: " + quantidade + " , Subtotal: $" + precoProduto);
-		
+	public List<Produto> getProduto() {
+		return produto;
 	}
-	
-	public double somaTotal (double preco, Integer quantidade, Produto precoProduto) {
-		
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
+
+	public void addProduto(Produto produto) {
+		addProduto(produto);
+	}
+
+	public void removeProduto(Produto produto) {
+		removeProduto(produto);
+	}
+
+	public double total() {
+		return preco * quantidade;
 	}
 
 }

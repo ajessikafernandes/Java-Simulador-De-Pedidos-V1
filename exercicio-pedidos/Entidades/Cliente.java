@@ -4,16 +4,20 @@ public class Cliente {
 
 	private String nome;
 	private String email;
-	private String dataNascimento ;
-	
+	private String dataNascimento;
+
 	public Cliente() {
-	
+
 	}
-	
+
 	public Cliente(String nome, String email, String dataNascimento) {
 		this.nome = nome;
 		this.email = email;
 		this.dataNascimento = dataNascimento;
+	}
+
+	public void toString(String nome, String email, String dataNascimento) {
+		System.out.printf("Cliente: " + nome + " (" + dataNascimento + ") - " + email);
 	}
 
 	public String getNome() {
@@ -38,10 +42,6 @@ public class Cliente {
 
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}	
-	
-	public void toString (String nome, String email, String dataNascimento) {
-		System.out.printf("Cliente: " + nome + " (" + dataNascimento + ") - "  + email);
 	}
-	
+
 }
