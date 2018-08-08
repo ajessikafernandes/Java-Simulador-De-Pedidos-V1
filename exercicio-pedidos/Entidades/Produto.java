@@ -2,7 +2,7 @@ package Entidades;
 
 public class Produto {
 
-	private String nome;
+	private String nomeItem;
 	private double preco;
 
 	public Produto() {
@@ -10,16 +10,16 @@ public class Produto {
 	}
 
 	public Produto(String nome, double preco) {
-		this.nome = nome;
+		this.nomeItem = nome;
 		this.preco = preco;
 	}
 
 	public String getNome() {
-		return nome;
+		return nomeItem;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nomeItem = nome;
 	}
 
 	public double getPreco() {

@@ -27,38 +27,6 @@ public class Ordem {
 		this.status = status;
 	}
 
-	public Date getMomento() {
-		return momento;
-	}
-
-	public void setMomento(Date momento) {
-		this.momento = momento;
-	}
-
-	public StatusPedido getStatus() {
-		return status;
-	}
-
-	public void setStatus(StatusPedido status) {
-		this.status = status;
-	}
-
-	public List<Pedidos> getPedidos() {
-		return pedidos;
-	}
-
-	public void setPedidos(List<Pedidos> pedidos) {
-		this.pedidos = pedidos;
-	}
-
-	public List<Cliente> getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(List<Cliente> cliente) {
-		this.cliente = cliente;
-	}
-
 	public void addItem(Pedidos pedido) {
 		pedidos.add(pedido);
 	}
@@ -75,12 +43,45 @@ public class Ordem {
 		removeCliente(cliente);
 	}
 
-	public double total() {
-		double sum = preco * quantidade;
-		
-		for (Produto somatotal : produto){
-			somatotal += sum;
-		}
-		return sum;
+//	public double total(Pedidos pedidos) {
+//		double soma;
+//		for (Pedidos somatotal : pedidos ) {
+//			soma = somatotal.subtotal();
+//		}
+//		return soma;
+//	}
+
+	public Date getMomento() {
+		return momento;
 	}
+
+	public void setMomento(Date momento) {
+		this.momento = momento;
+	}
+
+	public StatusPedido getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusPedido status) {
+		this.status = status;
+	}
+
+	public List<Cliente> getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(List<Cliente> cliente) {
+		this.cliente = cliente;
+	}
+
+	public List<Pedidos> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedidos> pedidos) {
+		this.pedidos = pedidos;
+	}
+	
+	
 }

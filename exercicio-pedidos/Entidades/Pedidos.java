@@ -9,18 +9,20 @@ public class Pedidos {
 	private double preco;
 
 	private List<Produto> produto = new ArrayList<>();
+	private Produto nomeItem;
 
 	public Pedidos() {
 
 	}
 
-	public Pedidos(double preco, Integer quantidade) {
+	public Pedidos(Produto nomeItem, double preco, Integer quantidade) {
 		this.preco = preco;
 		this.quantidade = quantidade;
+		this.nomeItem = nomeItem;
 	}
 
-	public void toString(Produto nome, double preco, Integer quantidade, Produto precoProduto) {
-		System.out.println(nome + ", $" + preco + ", Quantidade: " + quantidade + " , Subtotal: $" + precoProduto);
+	public void toString(Produto nomeItem, double preco, Integer quantidade, Produto precoProduto) {
+		System.out.println(nomeItem + ", $" + preco + ", Quantidade: " + quantidade + " , Subtotal: $" + precoProduto);
 
 	}
 
@@ -56,7 +58,7 @@ public class Pedidos {
 		removeProduto(produto);
 	}
 
-	public double total() {
+	public double subtotal() {
 		return preco * quantidade;
 	}
 
