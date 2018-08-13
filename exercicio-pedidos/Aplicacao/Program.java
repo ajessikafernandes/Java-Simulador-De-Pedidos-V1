@@ -2,15 +2,15 @@ package Aplicacao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
 import Entidades.Cliente;
-import Entidades.Ordem;
-import Entidades.Pedidos;
+import Entidades.Produto;
 import Enums.StatusPedido;
 
 public class Program {
@@ -19,7 +19,9 @@ public class Program {
 
 		Locale.setDefault(Locale.US);
 		Scanner ler = new Scanner(System.in);
-		SimpleDateFormat sdf = new SimpleDateFormat ("dd/MM/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat ("dd/MM/yyyy HH:mm:ss");
+		
+		List<Cliente> cliente = new ArrayList<>();
 		
 		System.out.println("Informe os dados do Cliente: ");
 		System.out.print("Nome: ");
@@ -29,40 +31,43 @@ public class Program {
 		System.out.print("Data de Nascimento: ");
 		String dataNascimento = ler.nextLine();
 		
-		Cliente cliente = new Cliente(nome, email, dataNascimento);
+		cliente.add(new Cliente (nome, email, dataNascimento ));
 		ler.nextLine();
+		
+		System.out.println();
 		
 		System.out.println("Entre com os dados do pedido: ");
 		System.out.print("Status: ");
-		String status = ler.nextLine();
+		StatusPedido status = StatusPedido.valueOf(ler.next());
 				
-		StatusPedido.valueOf(status);
-		
-		System.out.println("Quantos itens deverá ser acrescentado ao pedido: ");
+		System.out.print("Quantos itens deverá ser acrescentado ao pedido: ");
 		int qtdItem = ler.nextInt();
 		ler.nextLine();
 		
-		//List <Pedidos> pedido = new ArrayList <>();
+		System.out.println();
 		
-		for (int cont = 1; cont < qtdItem; cont++) {
+		List <Produto> produto = new ArrayList <>();
+		
+		for (int cont = 1; cont <= qtdItem; cont++) {
 			System.out.println("Entre com os dados do item #" + cont + " :");
 			System.out.print("Nome produto: ");
 			String nomeItem = ler.nextLine();
 			System.out.print("Preço do produto: ");
 			double preco = ler.nextDouble();
-			System.out.println("Quantidade: ");
+			System.out.print("Quantidade: ");
 			int quantidade = ler.nextInt();
 			
-//			Pedidos pedido = new Pedidos (nomeItem, preco, quantidade);
+//			produto.add(new Produto (nomeItem, preco, quantidade));
 		}
 		
-		System.out.println("Pedido Finalizado: ");
-		Date momento = sdf.parse(ler.next());
-		
+		System.out.println("Dados do Pedido: ");
 		System.out.print("Pedido realizado: "); 
-		System.out.println(momento);
-		System.out.println("Status do pedido: ");
-		System.out.println("Cliente");
+		Calendar cal = Calendar.getInstance();
+		String dataf = sdf.format(cal.getTime());
+		System.out.println(dataf);
+		System.out.print("Status do pedido: ");
+		System.out.println(status);
+		System.out.print("Cliente: ");
 		System.out.println(cliente);
 		
 		ler.close();

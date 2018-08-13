@@ -16,9 +16,9 @@ public class Cliente {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public String toString(String nome, String email, String dataNascimento) {
-		System.out.printf("Cliente: " + nome + " (" + dataNascimento + ") - " + email);
-		return null;
+	@Override
+	public String toString() {
+		return nome + " (" + dataNascimento + ") - " + email;
 	}
 
 	public String getNome() {

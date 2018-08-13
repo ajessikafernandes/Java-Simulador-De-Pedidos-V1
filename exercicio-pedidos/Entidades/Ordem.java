@@ -3,8 +3,6 @@ package Entidades;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import Entidades.Cliente;
 import Entidades.Ordem;
 import Entidades.Pedidos;
 
@@ -14,8 +12,7 @@ public class Ordem {
 
 	private Date momento = new Date();
 	private StatusPedido status;
-
-	private List<Cliente> cliente = new ArrayList<>();
+	
 	private List<Pedidos> pedidos = new ArrayList<>();
 
 	public Ordem() {
@@ -35,22 +32,6 @@ public class Ordem {
 		pedidos.remove(pedido);
 	}
 
-	public void addCliente(Cliente cliente) {
-		addCliente(cliente);
-	}
-
-	public void removeCliente(Cliente cliente) {
-		removeCliente(cliente);
-	}
-
-//	public double total(Pedidos pedidos) {
-//		double soma;
-//		for (Pedidos somatotal : pedidos ) {
-//			soma = somatotal.subtotal();
-//		}
-//		return soma;
-//	}
-
 	public Date getMomento() {
 		return momento;
 	}
@@ -67,20 +48,12 @@ public class Ordem {
 		this.status = status;
 	}
 
-	public List<Cliente> getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(List<Cliente> cliente) {
-		this.cliente = cliente;
-	}
-
-	public List<Pedidos> getPedidos() {
-		return pedidos;
+	public void getPedidos(List<Pedidos> pedidos) {
+		pedidos.add(new Pedidos());
 	}
 
 	public void setPedidos(List<Pedidos> pedidos) {
-		this.pedidos = pedidos;
+		pedidos.remove(new Pedidos());
 	}
 	
 	
