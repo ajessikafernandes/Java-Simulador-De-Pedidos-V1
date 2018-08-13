@@ -10,7 +10,9 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import Entidades.Cliente;
+import Entidades.Pedidos;
 import Entidades.Produto;
+
 import Enums.StatusPedido;
 
 public class Program {
@@ -32,9 +34,6 @@ public class Program {
 		String dataNascimento = ler.nextLine();
 		
 		cliente.add(new Cliente (nome, email, dataNascimento ));
-		ler.nextLine();
-		
-		System.out.println();
 		
 		System.out.println("Entre com os dados do pedido: ");
 		System.out.print("Status: ");
@@ -47,6 +46,7 @@ public class Program {
 		System.out.println();
 		
 		List <Produto> produto = new ArrayList <>();
+		List <Pedidos> pedidos = new ArrayList <>();
 		
 		for (int cont = 1; cont <= qtdItem; cont++) {
 			System.out.println("Entre com os dados do item #" + cont + " :");
@@ -54,10 +54,15 @@ public class Program {
 			String nomeItem = ler.nextLine();
 			System.out.print("Preço do produto: ");
 			double preco = ler.nextDouble();
+			
+			produto.add(new Produto (nomeItem, preco));
+			
 			System.out.print("Quantidade: ");
 			int quantidade = ler.nextInt();
+			ler.nextLine();
+		
+			//pedidos.add(quantidade);
 			
-//			produto.add(new Produto (nomeItem, preco, quantidade));
 		}
 		
 		System.out.println("Dados do Pedido: ");
@@ -69,6 +74,9 @@ public class Program {
 		System.out.println(status);
 		System.out.print("Cliente: ");
 		System.out.println(cliente);
+		
+		System.out.println("Itens do Pedido: ");
+		System.out.println(produto);
 		
 		ler.close();
 	}

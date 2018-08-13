@@ -4,21 +4,21 @@ public class Pedidos {
 
 	private Integer quantidade;
 	private double preco;
-	private Produto nomeItem;
 
 	public Pedidos() {
 
 	}
 
+	Produto produto = new Produto ();
+	
 	public Pedidos(Produto nomeItem, double preco, Integer quantidade) {
 		this.preco = preco;
 		this.quantidade = quantidade;
-		this.nomeItem = nomeItem;
+		this.produto = nomeItem;
 	}
 
-	public void toString(Produto nomeItem, double preco, Integer quantidade, Produto precoProduto) {
-		System.out.println(nomeItem + ", $" + preco + ", Quantidade: " + quantidade + " , Subtotal: $" + precoProduto);
-
+	public String toString(String nomeItem, double preco, Integer quantidade) {
+		return nomeItem + ", $ " + preco + ", Quantidade: " + quantidade + " , Subtotal: $" + subtotal();
 	}
 
 	public Integer getQuantidade() {

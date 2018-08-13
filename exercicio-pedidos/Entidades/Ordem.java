@@ -18,10 +18,14 @@ public class Ordem {
 	public Ordem() {
 
 	}
-
+	
 	public Ordem(Date momento, StatusPedido status) {
 		this.momento = momento;
 		this.status = status;
+	}
+	
+	public String toString (Date momento, StatusPedido status) {
+		return momento + " " + status;
 	}
 
 	public void addItem(Pedidos pedido) {
