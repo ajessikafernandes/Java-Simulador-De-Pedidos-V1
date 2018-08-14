@@ -8,10 +8,11 @@ public class Produto {
 	public Produto() {
 
 	}
-
+	
 	public Produto(String nome, double preco) {
 		this.nomeItem = nome;
 		this.preco = preco;
+		
 	}
 
 	public String getNome() {

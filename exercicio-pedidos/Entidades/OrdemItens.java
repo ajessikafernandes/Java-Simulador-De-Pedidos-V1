@@ -1,24 +1,16 @@
 package Entidades;
 
-public class Pedidos {
+public class OrdemItens {
 
 	private Integer quantidade;
 	private double preco;
 
-	public Pedidos() {
-
-	}
-
-	Produto produto = new Produto ();
+	private Produto produto;
 	
-	public Pedidos(Produto nomeItem, double preco, Integer quantidade) {
+	public OrdemItens(Produto produto, double preco, Integer quantidade) {
 		this.preco = preco;
 		this.quantidade = quantidade;
-		this.produto = nomeItem;
-	}
-
-	public String toString(String nomeItem, double preco, Integer quantidade) {
-		return nomeItem + ", $ " + preco + ", Quantidade: " + quantidade + " , Subtotal: $" + subtotal();
+		this.produto = produto;
 	}
 
 	public Integer getQuantidade() {
@@ -44,9 +36,13 @@ public class Pedidos {
 	public void removeProduto(Produto produto) {
 		removeProduto(produto);
 	}
-
+	
 	public double subtotal() {
 		return preco * quantidade;
+	} 
+	
+	public String toString(String nomeItem, double preco, Integer quantidade) {
+		return produto.getNome() + ", $" + quantidade + "SubTotal" + subtotal();
 	}
 
 }

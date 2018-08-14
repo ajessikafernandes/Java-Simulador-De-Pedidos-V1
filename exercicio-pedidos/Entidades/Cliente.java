@@ -16,11 +16,6 @@ public class Cliente {
 		this.dataNascimento = dataNascimento;
 	}
 
-	@Override
-	public String toString() {
-		return nome + " (" + dataNascimento + ") - " + email;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -43,6 +38,11 @@ public class Cliente {
 
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+
+	// @Override
+	public String toString() {
+		return nome + " (" + dataNascimento + ") - " + email;
 	}
 
 }
